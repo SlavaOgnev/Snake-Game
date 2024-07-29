@@ -1,0 +1,101 @@
+body {
+    background-image: url('фон3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.body_cont {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.score_contanier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 75px;
+    background-image: url(cloud.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: monospace;
+    text-transform: uppercase;
+    color: rgb(44, 126, 188);
+    padding: 20px;
+    padding-top: 25px;
+
+    margin-bottom: 20px;
+}
+
+.score_contanier p {
+    margin: 2px;
+}
+
+.game_container {
+    padding: 0%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(10, 60px);
+    grid-template-rows: repeat(10, 60px);
+    gap: 2px;
+    background-color: rgb(136, 200, 253);
+    border: 5px solid rgb(28, 116, 239);
+}
+
+.button {
+    background-color: rgb(28, 116, 239);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: monospace;
+
+}
+
+#restart {
+    width: 100px;
+}
+
+.button:hover {
+    transition: all 0.1s ease-in;
+    scale: 0.90;
+}
+
+.white {
+    margin-top: 10px;
+    background-color: rgb(249, 253, 255);
+    text-transform: uppercase;
+    height: 30px;
+}
+
+.cell {
+    background-color: rgb(68, 66, 65);
+}
+
+.snake {
+    background-color: rgb(28, 116, 239);
+}
+
+.snake-head {
+    background-color: rgb(160, 199, 228);
+
+}
+
+.apple {
+    padding: 5px;
+    background-color: rgb(68, 66, 65);
+    background-image: url('apple.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
