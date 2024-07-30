@@ -25,6 +25,7 @@ class Snake {
         this.body = [{ x: 2, y: 2 }, {x:1, y:2}];
         this.direction = 'right';
         this.newDirection = 'right';
+        this.headDirection = 'right';
     }
 
     setDirection(newDirection) {
@@ -36,7 +37,9 @@ class Snake {
         };
         if (allowedDirection[this.direction].includes(newDirection)) {
             this.newDirection = newDirection;
+            this.headDirection = newDirection;
         }
+
     }
 
     move() {
@@ -149,12 +152,14 @@ class Game {
     }
     updateGrid(){
         document.querySelectorAll('.snake').forEach(cell => cell.classList.remove('snake'));
-        document.querySelectorAll('.snake-head').forEach(cell => cell.classList.remove('snake-head'));
+        document.querySelectorAll('.snake-head').forEach(cell => {
+            cell.classList.remove('snake-head', 'right', 'left', 'up', 'down');
+        });
         document.querySelectorAll('.apple').forEach(cell => cell.classList.remove('apple'));
 
         this.snake.body.forEach( (section, index)=>
             {if (index == 0){
-                setHeadSnake(section.x, section.y)
+                setHeadSnake(section.x, section.y, this.snake.headDirection)
             }else setSnakeCell(section.x, section.y)});
         setAppleCell(this.apple.position.x, this.apple.position.y);
 
@@ -174,10 +179,11 @@ function setSnakeCell(x,y){
     }
 }
 
-function setHeadSnake (x,y){
+function setHeadSnake (x,y, direction){
     const cell = getCell(x,y);
     if (cell){
-        cell.classList.add('snake-head')
+        cell.classList.add('snake-head');
+        cell.classList.add(direction);
     }
 }
 

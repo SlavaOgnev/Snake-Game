@@ -83,18 +83,46 @@ body {
 }
 
 .snake {
-    background-color: rgb(28, 116, 239);
+    /* background-color: rgb(28, 116, 239); */
+    background-image: url(body.png );
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: 3px solid rgb(5, 92, 214);
+    border-radius: 5px; */
 }
 
 .snake-head {
     background-color: rgb(160, 199, 228);
+}
 
+.snake-head.up {
+    background-image: url(headUp.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.snake-head.down {
+    background-image: url(headDown.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.snake-head.left {
+    background-image: url(headLeft.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.snake-head.right {
+    background-image: url(headRight.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .apple {
     padding: 5px;
-    background-color: rgb(68, 66, 65);
-    background-image: url('apple.png');
+    /* background-color: rgb(68, 66, 65); */
+    background-image: url('apple3.0.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
